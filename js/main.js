@@ -1,7 +1,7 @@
 var GAME_NUMBERS = 5; // quantità di numeri da memorizzare
 var MIN_NUMBER = 1; // numero minimo da generare
 var MAX_NUMBER = 100; // numero massimo da generare
-var MEMO_TIME = 300; // 30 secondi
+var MEMO_TIME = 30000; // 30 secondi
 
 var memoNumbers = []; // array di numeri da memorizzare
 var userNumbers = []; // array di numeri che inserirà l'utente
@@ -31,7 +31,7 @@ function timeLeft (){
 
     if (!isNumberInArray (inputNumber, userNumbers)) {
       userNumbers.push (inputNumber);
-    } else if (isNumberInArray (inputNumber, userNumbers)) {
+    } else {
       alert ('Numero già inserito! Riprova')
     }
 
