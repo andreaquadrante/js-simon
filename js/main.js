@@ -7,7 +7,7 @@ var memoNumbers = []; // array di numeri da memorizzare
 var userNumbers = []; // array di numeri che inserirà l'utente
 var checkedNumbers = []; // array di numeri indovinati dall'utente
 
-alert ('Cerca di memorizzare i numeri che seguiranno. Dopo 30 secondi dovrai inserirli tu! Sei pronto?')
+alert ('Cerca di memorizzare i numeri che seguiranno. Dopo 30 secondi dovrai inserirli tu! Sei pronto?');
 
 // creo un ciclo per generare i numeri casuali, visualizzarli a schermo e inserirli in un array
 while (memoNumbers.length < GAME_NUMBERS) {
@@ -27,16 +27,16 @@ function timeLeft (){
   // creo un ciclo per chiedere all'utente di inserire i numeri che avrà ricordato da quelli visualizzati in precedenza e inserirli in un array
   while (userNumbers.length < GAME_NUMBERS) {
 
-    var inputNumber = parseInt (prompt('Inserisci i numeri che ricordi'))
+    var inputNumber = parseInt (prompt('Inserisci i numeri che ricordi'));
 
     if (!isNumberInArray (inputNumber, userNumbers)) {
       userNumbers.push (inputNumber);
     } else {
-      alert ('Numero già inserito! Riprova')
+      alert ('Numero già inserito! Riprova');
     }
 
     if (memoNumbers.includes(inputNumber)) {
-      checkedNumbers.push (inputNumber)
+      checkedNumbers.push (inputNumber);
     }
 
   }
@@ -48,12 +48,12 @@ function timeLeft (){
     resultMessageEl.innerHTML = 'Hai ricordato ' + checkedNumbers.length + ' numero. Non male...';
     resultNumbersEl.innerHTML = 'Hai inserito il numero ' + checkedNumbers;
   } else if (checkedNumbers.length == GAME_NUMBERS) {
-    resultNumbersEl.innerHTML = 'Hai ricordato tutti i ' + checkedNumbers.length + ' numeri. Complimenti!'
+    resultNumbersEl.innerHTML = 'Hai ricordato tutti i ' + checkedNumbers.length + ' numeri. Complimenti!';
   } else if (checkedNumbers.length > 1) {
     resultMessageEl.innerHTML = 'Hai ricordato ' + checkedNumbers.length + ' numeri. Bravo!';
     resultNumbersEl.innerHTML = 'Hai inserito i numeri ' + checkedNumbers;
   } else {
-    resultMessageEl.innerHTML = 'Non hai ricordato nessun numero... riprova!'
+    resultMessageEl.innerHTML = 'Non hai ricordato nessun numero... riprova!';
   }
 
 }
